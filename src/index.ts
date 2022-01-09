@@ -8,7 +8,6 @@ const morg = morgan('tiny');
 
 app.use('/api', morg, routes);
 
-
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });

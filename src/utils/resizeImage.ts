@@ -1,16 +1,21 @@
 import sharp from 'sharp';
 import path from 'path';
 
-const resizeImage = async (fileName: string, height: number, width: number) => {
-    try {
-        await sharp(`../../images/full/${fileName}`).resize(width, height)
-            .toFile(`../../images/resized/resized-${fileName}`).then((d) => {
-                console.log(d);
-            });
-    } catch (err) {
-        console.log(err);
-    }
-}
-
-resizeImage('santamonica.jpg', 100, 100);
+const resizeImage = async (
+  fileName: string,
+  height: string,
+  width: string
+): Promise<void> => {
+  try {
+    const h: number = parseInt(height);
+    const w: number = parseInt(width);
+    await sharp(path.join(__dirname, `../../images/full/${fileName}.jpg`))
+      .resize(w, h)
+      .toFile(
+        path.join(__dirname, `../../images/resized/resized-${fileName}.jpg`)
+      );
+  } catch (err) {
+    console.log(err);
+  }
+};
 export default resizeImage;
