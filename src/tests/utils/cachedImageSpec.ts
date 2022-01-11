@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 import app from '../../index';
-import cachedImage from '../../utils/cachedImage';
+import cachedImage from '../../routes/utils/cachedImage';
 import { promises as fs } from 'fs';
 import path from 'path';
 

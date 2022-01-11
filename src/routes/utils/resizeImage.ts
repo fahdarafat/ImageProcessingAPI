@@ -1,8 +1,8 @@
 import sharp from 'sharp';
 import path from 'path';
 
-const filePath = path.join(__dirname, `../../images/full/`);
-const resizedFilePath = path.join(__dirname, `../../images/resized/`);
+const filePath = path.join(__dirname, `../../../images/full/`);
+const resizedFilePath = path.join(__dirname, `../../../images/resized/`);
 
 const resizeImage = async (
   fileName: string,
